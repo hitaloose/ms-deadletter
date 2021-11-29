@@ -1,0 +1,26 @@
+steps:
+  # Install
+- name: 'gcr.io/cloud-builders/npm'
+  args: 
+  - 'ci'
+
+  # Build
+- name: 'gcr.io/cloud-builders/npm'
+  args: 
+  - 'run'
+  - 'build'
+
+  # Deploy
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - deadletter
+  - --set-env-vars
+  - NODE_ENV=production
+  - --runtime=nodejs14
+  - --source=.
+  - --entry-point=app
+  - --trigger-http
+  - --allow-unauthenticated
