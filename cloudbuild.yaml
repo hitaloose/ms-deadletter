@@ -17,10 +17,9 @@ steps:
       - functions
       - deploy
       - deadletter
-      - --set-env-vars
-      - NODE_ENV=production
       - --runtime=nodejs14
       - --source=.
       - --entry-point=app
       - --trigger-http
       - --allow-unauthenticated
+      - --verbosity=debug
