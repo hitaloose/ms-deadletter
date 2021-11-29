@@ -1,3 +1,3 @@
-const { app } = require("./dist/main/app");
+const { app } = require("./dist/app");
 
 module.exports = { app };
