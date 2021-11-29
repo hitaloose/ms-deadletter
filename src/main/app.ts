@@ -9,6 +9,8 @@ app.post("/handler", (req, res) => {
     Buffer.from(req.body.message?.data, "base64").toString("utf-8")
   );
 
+  console.log(data);
+
   if (data.error) {
     throw new Error();
   }
