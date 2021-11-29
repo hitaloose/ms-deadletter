@@ -24,4 +24,3 @@ steps:
       - --entry-point=app
       - --trigger-http
       - --allow-unauthenticated
-      - --region=us-west1
